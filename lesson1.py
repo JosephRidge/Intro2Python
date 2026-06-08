@@ -42,10 +42,15 @@ DATA TYPES:
         - slicing
         - immutable in nature 
     - Numbers:
-        - Integers
+        - Integers:
+            - number that starts from 0 to -ve infinity and 0 to +ve infinity
+            - int(): <class 'int'>
+            - whole number
+            - inbuilt methods
 
         - Floating
-        - Complex
+        - Complex:
+            - <class 'complex'>
     - Lists:
         - Set
         - Array
@@ -104,7 +109,31 @@ output = knowledge_base.find('I')
 
 
 
+#inetegers
+current_year = 2026
+yob = 2000
 
+age = current_year - yob 
+output = age
+output = type(age)
+user_age = "23" # input("Enter your age: ")
+output = user_age
+output = type(user_age)
+output = len(user_age)
+user_age = int(user_age)
+output = type(user_age) 
+# output = len(user_age) # TypeError: object of type 'int' has no len() => you cannot get the length of an integer
+
+# Floating number => a number that has a decimal 
+weight = 20.2
+height = 60.5
+output = height
+output = type(height)
+
+#  complex numbers 
+value = 2j
+output = value
+output = type(value)
 
 
 # standard output
