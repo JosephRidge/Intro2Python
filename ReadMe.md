@@ -17,3 +17,7 @@ Create an `requirements.txt` file which will hold all out dependencies:
 - when your collaborator gets this project they are going to run `pip install -r requirements.txt` s as to get the particular dependencies
 
 Create `.gitignore` file & add env inside it
+
+### Variables 
+![alt text](image.png)
+![alt text](image-1.png)
