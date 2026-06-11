@@ -109,7 +109,7 @@ output = knowledge_base.find('I')
 
 
 
-#inetegers
+#integers
 current_year = 2026
 yob = 2000
 
