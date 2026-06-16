@@ -104,4 +104,10 @@ format_text = lambda text: formatText(text)
 for fruit in fruits:
     print(format_text(fruit))
 
+# try..except
+try: 
+    name += ""
+except Exception as e:
+    print(e)
+
 # print(amount(5))

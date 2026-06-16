@@ -89,8 +89,21 @@ basket_size = len(fruits)
 # range(10): moves from 0 to 9
 # range(1, 10): moves from 1 to 9
 # range (2, 18, 2): moves from 2 to 17 with a step of 2
-for i in range(2, 18, 2):
-    print(i)
+# for i in range(2, 18, 2):
+#     print(i)
+
+start = 0 
+stop = 20 
+#  break and continue
+for i in range(start, stop):
+    if i%2 == 0:  # divisibility test
+        continue # skips if condition is met
+    elif i == 17:
+        break # stop iteration
+    else:
+        print(i)
+    i +=1
+
 
 print("=============================================")
 print(output)
