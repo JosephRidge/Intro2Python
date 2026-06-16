@@ -81,5 +81,66 @@ class FootballTeam:
 teamKenya = FootballTeam("Harambee Stars", "Harambee stars", "top team in Africa", "John Doe Kamau", "World Cup")
 teamTanzania = FootballTeam("TZ Samahani", "Team Samahani", "features in top 20 teams in Africa", "Bwana Asubuhi", "World Cup")
 
-teamKenya.train()
-teamTanzania.train()
+# teamKenya.train()
+# teamTanzania.train()
+
+
+
+class Vehicle:
+    #  initialization
+    def __init__(self, owner, model, yom, color, is_petrol, is_four_wheel_drive, is_hybrid, is_electric, log_book_ref):
+        self.model = model
+        self.owner = owner
+        self.yom = yom
+        self.color = color
+        self.is_petrol = is_petrol
+        self.is_four_wheel_drive = is_four_wheel_drive
+        self.is_hybrid = is_hybrid
+        self.is_electric = is_electric
+        self.__log_book_ref = log_book_ref # encapsulation, wehreby we are restricting access to an attribute locally 
+
+    def drive(self):
+        print(f"{self.owner}'s Vehicle, {self.model}, goo vrooom! ")
+
+    def description(self):
+        print(f"""
+        Vehicle of model {self.model} was manufactured in the year {self.yom} it is color {self.color}
+         and consumes {'PETROL' if self.is_petrol else 'DIESEL'}. It is {'4x4' if self.is_four_wheel_drive else '2WD'}
+         """)
+
+    def getLogBook(self):
+        print(f"{self.owner}'s log book humber is {self.__log_book_ref}")
+
+johnsCar = Vehicle("John", "Honda",2017,"black", True, True, False, False,"JKLOGBK-12345634363")
+marysCar = Vehicle("Mary","Hyundai", 2020, "pink", True, False, True, True,"MWLOGBK-99999990909")
+
+# johnsCar.drive()
+# print(johnsCar.color)
+# print(johnsCar.__log_book_ref) #AttributeError: 'Vehicle' object has no attribute '__log_book_ref'
+# marysCar.getLogBook() # this will work
+# johnsCar.getLogBook() # this will work
+# marysCar.drive()
+
+
+#  inheritance => the parent is Vehicle and the child is Tuktuk
+class TukTuk(Vehicle):
+    def __init__(self, owner, model, yom, color, is_petrol, is_four_wheel_drive, is_hybrid, is_electric, log_book_ref, purpose, is_registered_on_uber):
+        super().__init__(owner, model, yom, color, is_petrol, is_four_wheel_drive, is_hybrid, is_electric, log_book_ref)
+        self.purpose = purpose
+        self.is_registered_on_uber =is_registered_on_uber 
+
+# polymorphism
+    def drive(self):
+            print(f"{self.owner} is riding a Tuktuk of model  {self.model} !! ")
+
+
+redTuktuk = TukTuk("Jerry", "HONDA",2014,"RED", True, False, False, False,"JKLOGBK-12345TKTK","MZIGO", False)
+blueTuktuk = TukTuk("MICKEY", "TVS",2017,"BLUE", True, False, False, False,"MKLOGBK-UKUK34363", "TRANSPORTING PEOPLE", True)
+
+
+redTuktuk.description()
+blueTuktuk.description()
+print("==============================================")
+redTuktuk.drive()
+blueTuktuk.drive()
+print(redTuktuk.purpose)
